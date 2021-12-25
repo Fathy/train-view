@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "start": "parcel index.html",
-        "build": "rm -rf dist && parcel build --no-source-maps index.html"
+        "build": "rm -rf docs && parcel build --no-source-maps index.html --dist-dir docs"
     },
     "author": "",
     "license": "ISC",
