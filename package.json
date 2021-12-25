@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "start": "parcel index.html",
-        "build": "rm -rf docs && parcel build --no-source-maps index.html --dist-dir docs"
+        "build": "rm -rf docs && parcel build --no-source-maps index.html --dist-dir docs --public-url '/train-view'"
     },
     "author": "",
     "license": "ISC",
