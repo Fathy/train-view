@@ -1,0 +1,16 @@
+{
+    "name": "septa-website",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "rm -rf dist && parcel build --no-source-maps index.html"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@vaadin/router": "^1.7.4",
+        "lit": "^2.0.2",
+        "parcel": "^2.0.1"
+    }
+}
