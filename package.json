@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "parcel index.html",
+        "start": "parcel --dist-dir docs index.html",
         "build": "rm -rf docs && parcel build --no-source-maps index.html --dist-dir docs --public-url '/train-view'"
     },
     "author": "",
