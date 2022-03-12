@@ -131,7 +131,7 @@ class TrainView extends LitElement {
 
     setCurrentTrain(train) {
         this.currentTrain = train;
-        Router.go("/train-view/" + train.trainno);
+        Router.go("/train-view/train/" + train.trainno);
     }
 
     firstUpdated() {
