@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit";
 import { Router } from "@vaadin/router";
 
 import "./train-view.js";
+import "./next-arrive.js";
 
 class AppIndex extends LitElement {
     static styles = css``;
@@ -21,7 +22,8 @@ class AppIndex extends LitElement {
 
         router.setRoutes([
             { path: "/", component: "train-view" },
-            { path: "/:trainno", component: "train-view" },
+            { path: "/train/:trainno", component: "train-view" },
+            { path: "/next", component: "next-arrive" },
         ]);
     }
 
