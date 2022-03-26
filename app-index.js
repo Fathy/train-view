@@ -5,31 +5,34 @@ import "./train-view.js";
 import "./next-arrive.js";
 
 class AppIndex extends LitElement {
-    static styles = css``;
-    static properties = {};
+	static styles = css``;
+	static properties = {};
 
-    get main() {
-        return this.renderRoot?.querySelector("main");
-    }
+	get main() {
+		return this.renderRoot?.querySelector("main");
+	}
 
-    constructor() {
-        super();
-    }
+	constructor() {
+		super();
+	}
 
-    firstUpdated() {
-        super.firstUpdated();
-        const router = new Router(this.main);
+	firstUpdated() {
+		super.firstUpdated();
+		const router = new Router(this.main);
 
-        router.setRoutes([
-            { path: "/", component: "train-view" },
-            { path: "/train/:trainno", component: "train-view" },
-            { path: "/next", component: "next-arrive" },
-        ]);
-    }
+		router.setRoutes([
+			{ path: "/", component: "train-view" },
+			{ path: "/train", component: "train-view" },
+			{ path: "/train/:trainno", component: "train-view" },
+			{ path: "/next", component: "next-arrive" },
+			{ path: "/next/:start", redirect: "/next" },
+			{ path: "/next/:start/:end", component: "next-arrive" },
+		]);
+	}
 
-    render() {
-        return html`<main></main>`;
-    }
+	render() {
+		return html`<main></main>`;
+	}
 }
 
 customElements.define("app-index", AppIndex);
