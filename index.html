@@ -15,6 +15,7 @@
                 padding: 0px;
                 margin: 0px;
                 background-color: #2e2e2e;
+                font-family: monospace;
             }
 
             body {
@@ -26,17 +27,24 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 5vh;
+                flex-direction: column;
+                height: 7vh;
                 background-color: #1c1c1c;
                 color: #ffffff;
             }
 
+            .links a {
+                text-decoration: underline;
+                color: #ffffff;
+            }
+
+            .links a:hover {
+                text-decoration: none;
+            }
+
             .title {
-                font-family: monospace;
-                /* font-family: "Lucida Sans", "Lucida Sans Regular",
-                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif; */
-                margin-left: 1vw;
+                font-size: 16px;
+                margin-bottom: 3px;
             }
         </style>
         <script type="module" src="app-index.js"></script>
@@ -44,8 +52,12 @@
     <body>
         <div class="nav">
             <div class="title">Train View</div>
+            <div class="links">
+                <a href="/train-view/train">Trains</a> | 
+                <a href="/train-view/next">Next to Arrive</a>
+            </div>
         </div>
 
-        <app-index> </app-index>
+        <app-index></app-index>
     </body>
 </html>
