@@ -43,10 +43,11 @@ class NextArrive extends LitElement {
 		.button-area {
 			display: flex;
 			flex-direction: row;
+			margin: 10px 0px;
 		}
 
 		.search-unit {
-			margin: 10px;
+			margin: 2px 0px;
 			display: flex;
 			flex-direction: column;
 		}
@@ -70,6 +71,7 @@ class NextArrive extends LitElement {
 		.title {
 			display: block;
 			font-size: 20px;
+			margin: 10px 0px;
 		}
 
 		table {
@@ -173,6 +175,8 @@ class NextArrive extends LitElement {
 			this.endStopSelector.value,
 			this.startStopSelector.value,
 		];
+
+		this.search();
 	}
 
 	setStartEndFromUrl() {
