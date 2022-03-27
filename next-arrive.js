@@ -128,10 +128,9 @@ class NextArrive extends LitElement {
 
 	constructor() {
 		super();
-		stopsData.sort();
-		this.stopsList = stopsData.map(
-			(stop) => html`<option value="${stop}">${stop}</option>`
-		);
+		this.stopsList = stopsData
+			.sort()
+			.map((stop) => html`<option value="${stop}">${stop}</option>`);
 	}
 
 	getStatusClass(train) {
