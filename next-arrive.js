@@ -144,7 +144,7 @@ class NextArrive extends LitElement {
 	}
 
 	goToTrain(train) {
-		Router.go(`/train-view/train/${train.orig_train}`);
+		Router.go(`/train-view/trains/${train.orig_train}`);
 	}
 
 	getNtaData(start, end) {
