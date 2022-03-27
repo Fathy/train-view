@@ -161,13 +161,11 @@ class NextArrive extends LitElement {
 		);
 	}
 
-	ntaHtmlDataRows() {}
-
 	search() {
-		this.getNtaData(
-			this.startStopSelector.value,
-			this.endStopSelector.value
-		);
+		let startStation = this.startStopSelector.value;
+		let endStation = this.endStopSelector.value;
+
+		Router.go(`/train-view/next/${startStation}/${endStation}`);
 	}
 
 	swap() {
@@ -177,12 +175,31 @@ class NextArrive extends LitElement {
 		];
 	}
 
-	updated() {
-		super.updated();
+	setStartEndFromUrl() {
 		this.startStopSelector = this.renderRoot.querySelector("#startStop");
 		this.endStopSelector = this.renderRoot.querySelector("#endStop");
-		this.startStopSelector.value = "30th Street Station";
-		this.endStopSelector.value = "Suburban Station";
+
+		let start = this.location.params.start;
+		let end = this.location.params.end;
+		const startAndEndInUrl = start && end;
+
+		if (startAndEndInUrl) {
+			this.startStopSelector.value = start;
+			this.endStopSelector.value = end;
+		} else {
+			// Set default stations
+			start = "30th Street Station";
+			end = "Suburban Station";
+			this.startStopSelector.value = start;
+			this.endStopSelector.value = end;
+		}
+
+		this.getNtaData(start, end);
+	}
+
+	firstUpdated() {
+		super.firstUpdated();
+		this.setStartEndFromUrl();
 	}
 
 	render() {
