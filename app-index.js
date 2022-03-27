@@ -22,8 +22,8 @@ class AppIndex extends LitElement {
 
 		router.setRoutes([
 			{ path: "/", component: "train-view" },
-			{ path: "/train", component: "train-view" },
-			{ path: "/train/:trainno", component: "train-view" },
+			{ path: "/trains", component: "train-view" },
+			{ path: "/trains/:trainno", component: "train-view" },
 			{ path: "/next", component: "next-arrive" },
 			{ path: "/next/:start", redirect: "/next" },
 			{ path: "/next/:start/:end", component: "next-arrive" },
