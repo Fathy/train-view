@@ -122,7 +122,7 @@ class TrainView extends LitElement {
 	`;
 
 	static properties = {
-		currentTrain: {},
+		currentTrain: undefined,
 		currentTrainSchedule: {},
 		location: {},
 		searchFilter: "",
@@ -131,7 +131,7 @@ class TrainView extends LitElement {
 
 	setCurrentTrain(train) {
 		this.currentTrain = train;
-		Router.go("/train-view/train/" + train.trainno);
+		Router.go("/train-view/trains/" + train.trainno);
 	}
 
 	firstUpdated() {
@@ -167,6 +167,12 @@ class TrainView extends LitElement {
 		);
 	}
 
+	showTrainDetails() {
+		if (!this.currentTrain) {
+			return "display:none";
+		}
+	}
+
 	updateSearchFilter(event) {
 		this.searchFilter = event.target.value;
 
@@ -181,12 +187,10 @@ class TrainView extends LitElement {
 
 	constructor() {
 		super();
-		// this.originalData = originalData;
 		this.originalData = [];
-		// this.currentTrainSchedule = originalScheduleData;
 		this.currentTrainSchedule = [];
 		this.data = this.originalData;
-		this.currentTrain = {};
+		this.currentTrain = undefined;
 	}
 
 	render() {
@@ -232,7 +236,7 @@ class TrainView extends LitElement {
 						)}
 					</table>
 				</div>
-				<div class="train-details">
+				<div class="train-details" style="${this.showTrainDetails()}">
 					<div class="inner-details-wrapper">
 						<div class="line">${this.currentTrain?.line}</div>
 						<div class="train-number">
